@@ -8,8 +8,6 @@ const projects = [
     tags: ["dbt", "BigQuery", "Python", "GCP"],
     status: "active",
     category: "DATA ENGINEERING",
-    accent: "from-emerald-500/20 to-teal-500/20",
-    borderAccent: "border-emerald-500/30",
     icon: "📊",
   },
   {
@@ -19,8 +17,6 @@ const projects = [
     tags: ["React", "Python", "PostgreSQL", "API"],
     status: "building",
     category: "PROPTECH",
-    accent: "from-blue-500/20 to-indigo-500/20",
-    borderAccent: "border-blue-500/30",
     icon: "🏠",
   },
   {
@@ -30,8 +26,6 @@ const projects = [
     tags: ["FastF1", "Python", "Plotly", "Analysis"],
     status: "active",
     category: "SPORTS ANALYTICS",
-    accent: "from-red-500/20 to-orange-500/20",
-    borderAccent: "border-red-500/30",
     icon: "🏎️",
   },
   {
@@ -41,8 +35,6 @@ const projects = [
     tags: ["Flutter", "OCR", "Firebase", "n8n"],
     status: "building",
     category: "FINTECH",
-    accent: "from-amber-500/20 to-yellow-500/20",
-    borderAccent: "border-amber-500/30",
     icon: "🧾",
   },
   {
@@ -52,8 +44,6 @@ const projects = [
     tags: ["Flutter", "Python", "NLP", "API"],
     status: "concept",
     category: "HEALTH & BEAUTY",
-    accent: "from-pink-500/20 to-rose-500/20",
-    borderAccent: "border-pink-500/30",
     icon: "✨",
   },
   {
@@ -63,230 +53,244 @@ const projects = [
     tags: ["Flutter", "Firebase", "AI", "Wellbeing"],
     status: "concept",
     category: "MENTAL HEALTH",
-    accent: "from-violet-500/20 to-purple-500/20",
-    borderAccent: "border-violet-500/30",
     icon: "💜",
   },
 ];
 
 const statusConfig = {
-  active: { label: "LIVE", color: "bg-emerald-500", textColor: "text-emerald-400" },
-  building: { label: "IN DEV", color: "bg-amber-500", textColor: "text-amber-400" },
-  concept: { label: "CONCEPT", color: "bg-purple-500", textColor: "text-purple-400" },
+  active: { label: "LIVE", color: "bg-emerald-400", textColor: "text-emerald-400" },
+  building: { label: "IN DEV", color: "bg-amber-400", textColor: "text-amber-400" },
+  concept: { label: "CONCEPT", color: "bg-violet-400", textColor: "text-violet-400" },
 };
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-zinc-100">
-      <main className="mx-auto max-w-6xl px-6 py-12">
+    <div className="grain min-h-screen bg-[#050505] text-zinc-100 relative">
+      {/* Grid texture overlay */}
+      <div className="grid-texture" />
 
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <main className="relative z-10 mx-auto max-w-6xl px-6 py-16 md:py-24">
 
-          {/* Hero Card - Spans 2 columns */}
-          <div className="md:col-span-2 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-3xl p-8 border border-zinc-800 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <p className="text-pink-500 font-mono text-sm mb-2 tracking-wider">Hello, I'm</p>
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight">Orianne</h1>
-            <p className="text-xl text-zinc-400 mb-6 font-medium">
-              Data Engineer & Newsletter Creator
-            </p>
-            <p className="text-zinc-500 max-w-lg leading-relaxed">
-              British-born South African based in Cape Town. I turn data into stories
-              about F1, property, skincare, and tech.
-            </p>
-            <div className="flex gap-4 mt-8">
-              <a
-                href="https://github.com/Oriannewallace"
-                target="_blank"
-                className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-full text-sm transition-all hover:scale-105 font-mono"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://linkedin.com/in/oriannewallace"
-                target="_blank"
-                className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-full text-sm transition-all hover:scale-105 font-mono"
-              >
-                LinkedIn
-              </a>
+        {/* Hero Section */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+
+          {/* Main Hero Card */}
+          <div className="md:col-span-2 card rounded-3xl p-10 relative overflow-hidden animate-fade-up">
+            <div className="hero-gradient" />
+            <div className="relative z-10">
+              <p className="mono text-pink-400 text-sm mb-3 tracking-wide">Hello, I'm</p>
+              <h1 className="text-6xl md:text-7xl font-semibold mb-2 tracking-tight">
+                Orianne<span className="serif text-pink-400">.</span>
+              </h1>
+              <p className="text-xl text-zinc-400 mb-6 font-light">
+                Data Engineer <span className="text-zinc-600">&</span> <span className="serif">Newsletter Creator</span>
+              </p>
+              <p className="text-zinc-500 max-w-lg leading-relaxed text-[15px]">
+                British-born South African based in Cape Town. I turn data into stories
+                about F1, property, skincare, and tech.
+              </p>
+              <div className="flex gap-3 mt-10">
+                <a
+                  href="https://github.com/Oriannewallace"
+                  target="_blank"
+                  className="btn-primary px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-sm transition-all mono"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://linkedin.com/in/oriannewallace"
+                  target="_blank"
+                  className="btn-primary px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-sm transition-all mono"
+                >
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
 
           {/* Profile Photo Card */}
-          <div className="bg-gradient-to-br from-pink-600/20 to-purple-600/20 rounded-3xl p-6 border border-zinc-800 flex items-center justify-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(236,72,153,0.1),transparent_70%)]" />
-            <div className="w-48 h-48 rounded-full border-4 border-pink-500/30 overflow-hidden relative z-10 shadow-2xl shadow-pink-500/20">
-              <Image
-                src="/profile.png"
-                alt="Orianne"
-                width={192}
-                height={192}
-                className="w-full h-full object-cover"
-              />
+          <div className="card rounded-3xl p-8 flex items-center justify-center relative overflow-hidden animate-fade-up delay-1">
+            <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-violet-500/10" />
+            <div className="profile-glow">
+              <div className="w-44 h-44 rounded-full border-2 border-white/10 overflow-hidden relative z-10">
+                <Image
+                  src="/profile.png"
+                  alt="Orianne"
+                  width={176}
+                  height={176}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
+        </section>
+
+        {/* About & Newsletters Row */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
 
           {/* About Me Card */}
-          <div className="bg-zinc-900 rounded-3xl p-6 border border-zinc-800">
-            <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
-              <span className="text-pink-500">◆</span> About Me
+          <div className="card rounded-2xl p-6 animate-fade-up delay-2">
+            <h2 className="text-sm font-medium mb-4 flex items-center gap-2 text-zinc-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
+              About Me
             </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed">
+            <p className="text-zinc-500 text-[14px] leading-relaxed">
               I work remotely as a data engineer, building pipelines and analysing data.
               Outside of work, I dig into F1 telemetry, track property markets, and test
               skincare products with the same analytical mindset.
             </p>
           </div>
 
-          {/* Newsletter Cards */}
-          <div className="bg-gradient-to-r from-pink-600/10 to-purple-600/10 rounded-3xl p-6 border border-pink-500/20 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-pink-500 to-transparent opacity-50" />
-            <div className="flex flex-col h-full">
-              <div className="flex-1">
-                <p className="text-[10px] font-mono text-pink-400 tracking-widest mb-1">NEWSLETTER</p>
-                <h2 className="text-lg font-semibold mb-2">The Winning Formula</h2>
-                <p className="text-zinc-400 text-sm">
-                  F1 data analysis, race breakdowns, and trends from the paddock.
-                </p>
-              </div>
+          {/* The Winning Formula Newsletter */}
+          <div className="card rounded-2xl p-6 relative overflow-hidden animate-fade-up delay-3 group">
+            <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative z-10 flex flex-col h-full">
+              <p className="mono text-[10px] text-pink-400 tracking-widest mb-2">NEWSLETTER</p>
+              <h2 className="text-lg font-medium mb-2">The Winning Formula</h2>
+              <p className="text-zinc-500 text-sm flex-1">
+                F1 data analysis, race breakdowns, and trends from the paddock.
+              </p>
               <a
                 href="https://the-winning-formula.beehiiv.com"
                 target="_blank"
-                className="mt-4 px-5 py-2.5 bg-pink-600 hover:bg-pink-500 rounded-full text-sm font-medium transition-all hover:scale-105 hover:shadow-lg hover:shadow-pink-500/25 text-center"
+                className="btn-primary mt-5 px-5 py-2.5 bg-pink-500 hover:bg-pink-400 rounded-full text-sm font-medium text-center text-white"
               >
                 Subscribe
               </a>
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-600/10 to-cyan-600/10 rounded-3xl p-6 border border-blue-500/20 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50" />
-            <div className="flex flex-col h-full">
-              <div className="flex-1">
-                <p className="text-[10px] font-mono text-blue-400 tracking-widest mb-1">NEWSLETTER</p>
-                <h2 className="text-lg font-semibold mb-2">Working Smarter</h2>
-                <p className="text-zinc-400 text-sm">
-                  Working smarter, not harder—insights across tech, data, and assets.
-                </p>
-              </div>
+          {/* Working Smarter Newsletter */}
+          <div className="card rounded-2xl p-6 relative overflow-hidden animate-fade-up delay-4 group">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative z-10 flex flex-col h-full">
+              <p className="mono text-[10px] text-blue-400 tracking-widest mb-2">NEWSLETTER</p>
+              <h2 className="text-lg font-medium mb-2">Working Smarter</h2>
+              <p className="text-zinc-500 text-sm flex-1">
+                Working smarter, not harder—insights across tech, data, and assets.
+              </p>
               <a
                 href="#"
                 target="_blank"
-                className="mt-4 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 rounded-full text-sm font-medium transition-all hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 text-center"
+                className="btn-primary mt-5 px-5 py-2.5 bg-blue-500 hover:bg-blue-400 rounded-full text-sm font-medium text-center text-white"
               >
                 Subscribe
               </a>
             </div>
           </div>
+        </section>
 
-          {/* Projects Section - Full width */}
-          <div className="md:col-span-3 mt-8">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold flex items-center gap-3">
-                <span className="gradient-text">Projects</span>
-                <span className="text-zinc-600 font-mono text-sm font-normal">/ what I'm building</span>
-              </h2>
-              <div className="flex gap-2 text-xs font-mono">
-                <span className="flex items-center gap-1.5 text-zinc-500">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" /> Live
-                </span>
-                <span className="flex items-center gap-1.5 text-zinc-500">
-                  <span className="w-2 h-2 rounded-full bg-amber-500" /> Building
-                </span>
-                <span className="flex items-center gap-1.5 text-zinc-500">
-                  <span className="w-2 h-2 rounded-full bg-purple-500" /> Concept
-                </span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {projects.map((project) => {
-                const status = statusConfig[project.status as keyof typeof statusConfig];
-                return (
-                  <div
-                    key={project.id}
-                    className={`project-card bg-gradient-to-br ${project.accent} rounded-2xl p-5 border ${project.borderAccent} backdrop-blur-sm`}
-                  >
-                    <div>
-                      {/* Header */}
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex items-center gap-3">
-                          <span className="text-2xl">{project.icon}</span>
-                          <div>
-                            <p className="text-[10px] font-mono text-zinc-500 tracking-widest">{project.category}</p>
-                            <h3 className="font-semibold text-base leading-tight mt-0.5">{project.title}</h3>
-                          </div>
-                        </div>
-                        <div className={`flex items-center gap-1.5 px-2 py-1 rounded-full bg-zinc-900/80 border border-zinc-800`}>
-                          <span className={`w-1.5 h-1.5 rounded-full ${status.color} status-pulse`} />
-                          <span className={`text-[10px] font-mono ${status.textColor}`}>{status.label}</span>
-                        </div>
-                      </div>
-
-                      {/* Description */}
-                      <p className="text-zinc-400 text-sm leading-relaxed mb-4">
-                        {project.description}
-                      </p>
-
-                      {/* Tags */}
-                      <div className="flex flex-wrap gap-1.5">
-                        {project.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="tag-chip px-2 py-0.5 bg-zinc-900/60 text-zinc-400 text-[10px] font-mono rounded border border-zinc-800"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+        {/* Projects Section */}
+        <section className="mb-16 animate-fade-up delay-5">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-medium flex items-baseline gap-3">
+              <span className="gradient-text">Projects</span>
+              <span className="text-zinc-600 mono text-xs">/ what I'm building</span>
+            </h2>
+            <div className="flex gap-4 mono text-[11px]">
+              <span className="flex items-center gap-2 text-zinc-500">
+                <span className="w-2 h-2 rounded-full bg-emerald-400" /> Live
+              </span>
+              <span className="flex items-center gap-2 text-zinc-500">
+                <span className="w-2 h-2 rounded-full bg-amber-400" /> Building
+              </span>
+              <span className="flex items-center gap-2 text-zinc-500">
+                <span className="w-2 h-2 rounded-full bg-violet-400" /> Concept
+              </span>
             </div>
           </div>
 
-          <div className="md:col-span-3 section-divider my-8" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {projects.map((project, index) => {
+              const status = statusConfig[project.status as keyof typeof statusConfig];
+              return (
+                <div
+                  key={project.id}
+                  className={`project-card card rounded-2xl p-6 animate-fade-up`}
+                  style={{ animationDelay: `${0.5 + index * 0.1}s` }}
+                >
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">{project.icon}</span>
+                      <div>
+                        <p className="mono text-[10px] text-zinc-600 tracking-widest">{project.category}</p>
+                        <h3 className="font-medium text-[15px] leading-tight mt-1">{project.title}</h3>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/30 border border-white/5">
+                      <span className={`w-1.5 h-1.5 rounded-full ${status.color} status-pulse`} />
+                      <span className={`mono text-[10px] ${status.textColor}`}>{status.label}</span>
+                    </div>
+                  </div>
 
-          {/* Tech Stack Card - Full width */}
-          <div className="md:col-span-3 bg-zinc-900 rounded-3xl p-6 border border-zinc-800">
-            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-              <span className="text-pink-500">◆</span> Tech Stack
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              {[
-                { category: "Languages", items: ["Python", "SQL", "JavaScript"] },
-                { category: "Frameworks", items: ["React", "Flutter"] },
-                { category: "Cloud", items: ["GCP", "Azure"] },
-                { category: "Data", items: ["dbt", "Power BI", "BigQuery"] },
-                { category: "Tools", items: ["Claude Code", "Git", "n8n"] },
-              ].map((group) => (
-                <div key={group.category}>
-                  <h3 className="text-xs font-medium text-zinc-500 mb-2 uppercase tracking-wider">
-                    {group.category}
-                  </h3>
+                  {/* Description */}
+                  <p className="text-zinc-500 text-sm leading-relaxed mb-5">
+                    {project.description}
+                  </p>
+
+                  {/* Tags */}
                   <div className="flex flex-wrap gap-2">
-                    {group.items.map((item) => (
+                    {project.tags.map((tag) => (
                       <span
-                        key={item}
-                        className="px-3 py-1 bg-zinc-800 text-zinc-300 text-xs rounded-full border border-zinc-700"
+                        key={tag}
+                        className="tag px-2.5 py-1 text-zinc-500 mono text-[10px] rounded-full"
                       >
-                        {item}
+                        {tag}
                       </span>
                     ))}
                   </div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
+        </section>
 
-          {/* Experience Card */}
-          <div className="md:col-span-2 bg-zinc-900 rounded-3xl p-6 border border-zinc-800">
-            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-              <span className="text-pink-500">◆</span> Experience
+        <div className="section-divider my-12" />
+
+        {/* Tech Stack */}
+        <section className="card rounded-2xl p-8 mb-6 animate-fade-up delay-7">
+          <h2 className="text-sm font-medium mb-6 flex items-center gap-2 text-zinc-300">
+            <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
+            Tech Stack
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+            {[
+              { category: "Languages", items: ["Python", "SQL", "JavaScript"] },
+              { category: "Frameworks", items: ["React", "Flutter"] },
+              { category: "Cloud", items: ["GCP", "Azure"] },
+              { category: "Data", items: ["dbt", "Power BI", "BigQuery"] },
+              { category: "Tools", items: ["Claude Code", "Git", "n8n"] },
+            ].map((group) => (
+              <div key={group.category}>
+                <h3 className="mono text-[10px] text-zinc-600 mb-3 tracking-widest">
+                  {group.category.toUpperCase()}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="tag px-3 py-1.5 text-zinc-400 text-xs rounded-full"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Experience & Education Row */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+
+          {/* Experience */}
+          <div className="md:col-span-2 card rounded-2xl p-8 animate-fade-up delay-8">
+            <h2 className="text-sm font-medium mb-6 flex items-center gap-2 text-zinc-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
+              Experience
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {[
                 { role: "Data Engineer", company: "Creative CFO", period: "2025 – Present", highlight: true },
                 { role: "Senior Analyst", company: "Circana", period: "2023 – 2025", highlight: false },
@@ -295,86 +299,96 @@ export default function Home() {
               ].map((job, i) => (
                 <div
                   key={i}
-                  className={`flex items-center justify-between p-3 rounded-xl ${
-                    job.highlight ? "bg-pink-600/10 border border-pink-500/20" : "bg-zinc-800/50"
+                  className={`flex items-center justify-between p-4 rounded-xl transition-all ${
+                    job.highlight
+                      ? "bg-pink-500/5 border border-pink-500/10"
+                      : "bg-white/[0.02] hover:bg-white/[0.04]"
                   }`}
                 >
                   <div>
-                    <p className="font-medium text-sm">{job.role}</p>
-                    <p className="text-zinc-500 text-xs">{job.company}</p>
+                    <p className="font-medium text-sm text-zinc-200">{job.role}</p>
+                    <p className="text-zinc-600 text-xs mt-0.5">{job.company}</p>
                   </div>
-                  <span className="text-zinc-500 text-xs">{job.period}</span>
+                  <span className="mono text-zinc-600 text-[11px]">{job.period}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Education Card */}
-          <div className="bg-zinc-900 rounded-3xl p-6 border border-zinc-800">
-            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-              <span className="text-pink-500">◆</span> Education
+          {/* Education */}
+          <div className="card rounded-2xl p-8 animate-fade-up delay-8">
+            <h2 className="text-sm font-medium mb-6 flex items-center gap-2 text-zinc-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
+              Education
             </h2>
-            <div className="space-y-4">
-              <div className="p-3 bg-zinc-800/50 rounded-xl">
-                <p className="font-medium text-sm">BCom Honours</p>
-                <p className="text-zinc-500 text-xs">UCT • 2020</p>
-                <p className="text-zinc-600 text-xs mt-1">Financial Analysis</p>
+            <div className="space-y-3">
+              <div className="p-4 bg-white/[0.02] rounded-xl">
+                <p className="font-medium text-sm text-zinc-200">BCom Honours</p>
+                <p className="text-zinc-600 text-xs mt-0.5">UCT • 2020</p>
+                <p className="text-zinc-700 text-xs mt-2">Financial Analysis</p>
               </div>
-              <div className="p-3 bg-zinc-800/50 rounded-xl">
-                <p className="font-medium text-sm">BCom</p>
-                <p className="text-zinc-500 text-xs">UCT • 2017–2019</p>
-                <p className="text-zinc-600 text-xs mt-1">Economics & Statistics</p>
+              <div className="p-4 bg-white/[0.02] rounded-xl">
+                <p className="font-medium text-sm text-zinc-200">BCom</p>
+                <p className="text-zinc-600 text-xs mt-0.5">UCT • 2017–2019</p>
+                <p className="text-zinc-700 text-xs mt-2">Economics & Statistics</p>
               </div>
             </div>
           </div>
+        </section>
 
-          {/* Interests Card */}
-          <div className="md:col-span-2 bg-zinc-900 rounded-3xl p-6 border border-zinc-800">
-            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-              <span className="text-pink-500">◆</span> What I Write About
+        {/* What I Write About & Connect Row */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          {/* What I Write About */}
+          <div className="md:col-span-2 card rounded-2xl p-8">
+            <h2 className="text-sm font-medium mb-6 flex items-center gap-2 text-zinc-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
+              What I Write About
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { icon: "🏎️", label: "F1 & Data", desc: "Race analysis, telemetry" },
                 { icon: "🏠", label: "Property", desc: "SA market, yields" },
                 { icon: "✨", label: "Skincare", desc: "Ingredients, data" },
                 { icon: "💻", label: "Tech", desc: "Tools, automation" },
               ].map((interest) => (
-                <div key={interest.label} className="p-4 bg-zinc-800/50 rounded-xl text-center">
-                  <span className="text-2xl mb-2 block">{interest.icon}</span>
-                  <p className="font-medium text-sm">{interest.label}</p>
-                  <p className="text-zinc-500 text-xs">{interest.desc}</p>
+                <div key={interest.label} className="p-5 bg-white/[0.02] hover:bg-white/[0.04] rounded-xl text-center transition-all group">
+                  <span className="text-3xl mb-3 block group-hover:scale-110 transition-transform">{interest.icon}</span>
+                  <p className="font-medium text-sm text-zinc-300">{interest.label}</p>
+                  <p className="text-zinc-600 text-xs mt-1">{interest.desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Contact Card */}
-          <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-3xl p-6 border border-zinc-800">
-            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
-              <span className="text-pink-500">◆</span> Connect
+          {/* Connect */}
+          <div className="card rounded-2xl p-8">
+            <h2 className="text-sm font-medium mb-6 flex items-center gap-2 text-zinc-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-pink-400" />
+              Connect
             </h2>
-            <div className="space-y-3">
-              <a href="mailto:hello@orianne.dev" className="flex items-center gap-3 text-sm text-zinc-400 hover:text-pink-500 transition-colors">
-                <span className="w-8 h-8 bg-zinc-800 rounded-full flex items-center justify-center">✉️</span>
-                Email
+            <div className="space-y-2">
+              <a href="mailto:hello@orianne.dev" className="flex items-center gap-4 p-3 rounded-xl text-zinc-400 hover:text-pink-400 hover:bg-white/[0.02] transition-all group">
+                <span className="w-10 h-10 bg-white/[0.03] group-hover:bg-pink-500/10 rounded-full flex items-center justify-center transition-colors">✉️</span>
+                <span className="text-sm">Email</span>
               </a>
-              <a href="https://github.com/Oriannewallace" target="_blank" className="flex items-center gap-3 text-sm text-zinc-400 hover:text-pink-500 transition-colors">
-                <span className="w-8 h-8 bg-zinc-800 rounded-full flex items-center justify-center">💻</span>
-                GitHub
+              <a href="https://github.com/Oriannewallace" target="_blank" className="flex items-center gap-4 p-3 rounded-xl text-zinc-400 hover:text-pink-400 hover:bg-white/[0.02] transition-all group">
+                <span className="w-10 h-10 bg-white/[0.03] group-hover:bg-pink-500/10 rounded-full flex items-center justify-center transition-colors">💻</span>
+                <span className="text-sm">GitHub</span>
               </a>
-              <a href="https://linkedin.com/in/oriannewallace" target="_blank" className="flex items-center gap-3 text-sm text-zinc-400 hover:text-pink-500 transition-colors">
-                <span className="w-8 h-8 bg-zinc-800 rounded-full flex items-center justify-center">💼</span>
-                LinkedIn
+              <a href="https://linkedin.com/in/oriannewallace" target="_blank" className="flex items-center gap-4 p-3 rounded-xl text-zinc-400 hover:text-pink-400 hover:bg-white/[0.02] transition-all group">
+                <span className="w-10 h-10 bg-white/[0.03] group-hover:bg-pink-500/10 rounded-full flex items-center justify-center transition-colors">💼</span>
+                <span className="text-sm">LinkedIn</span>
               </a>
             </div>
           </div>
-
-        </div>
+        </section>
 
         {/* Footer */}
-        <footer className="mt-12 pt-8 border-t border-zinc-800 text-center text-zinc-600 text-sm">
-          <p>Built with Next.js • Cape Town, South Africa</p>
+        <footer className="mt-20 pt-8 border-t border-white/5 text-center">
+          <p className="text-zinc-700 text-sm mono">
+            Built with Next.js • Cape Town, South Africa
+          </p>
         </footer>
 
       </main>
